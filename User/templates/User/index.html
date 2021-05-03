@@ -1,0 +1,22 @@
+{% extends "User/layout.html" %}
+{% block body %}
+    <h1>Welcome page </h1>
+    <h2> {{request.user.username}} You are now at home</h2>
+    <h1>Please fill in the form </h1>
+
+    {% if message %}
+        {{ message }}
+    {% endif %}
+
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+
+    <div>
+        <a href="{% url 'logout' %}"><h1>Log out</h1></a>
+    </div>
+{% endblock %}

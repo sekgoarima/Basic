@@ -1,0 +1,12 @@
+{% extends "User/layout.html" %}
+{% block body %}
+
+    <h1>Welcome to Choose Module page </h1>
+    <form action="{% url 'module' %} " method="post">
+        {% csrf_token %}
+        <h2>{{ form }}</h2>
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+{% endblock %}
